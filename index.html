@@ -17,11 +17,58 @@
   <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet">
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
-
   <!-- Custom styles for this template -->
   <link href="css/resume.min.css" rel="stylesheet">
+  <style>
+  .accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+
+.active, .accordion:hover {
+  background-color: #ccc;
+}
+
+.accordion:after {
+  content: '\002B';
+  color: #777;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+.panel2 {
+  padding: 0 308px;
+  background-color: white;
+  max-height: 0;
+  height: 300;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+  </style>
+
 
 </head>
+
 
 <body id="page-top">
 
@@ -90,33 +137,57 @@
     <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="projects">
       <div class="w-100">
         <h2 class="mb-5">Projects & Publications</h2>
-          <i class="fas fa-book text-warning"> </i>
-          <a href="https://www.researchgate.net/publication/330473345_Applying_Deep_Learning_to_Public_Health_Using_Unbalanced_Demographic_Data_to_Predict_Thyroid_Disorder">Applying Deep Learning to Public Health:</a> Using Unbalanced Demographic Data to Predict Thyroid Disorder
-          <p>Published in 2018 IEEE 9th Annual Information Technology, Electronics and Mobile Communication Conference</p>
-          <img src="img/thyroid.png" alt="results chart">
-        <ul class="fa-ul mb-0">
-          <br>
-
-        <li>
-            <i class="fa-li fa fa-project-diagram text-warning"></i>
-            <a href="https://docs.google.com/presentation/d/16RVb31mAPiwDYtUNrYCGhXxWslKI_cLqxbhrrI8S1pM/edit#slide=id.g21c612c314_0_0" >Predicting Room Switches</a> for University of San Francisco’s Housing Department using random forests, logistic regression, and SVM in Python/R </li>
-            <img src="img/roommates.PNG" alt="results chart">
+        <button class="accordion"><i class="fas fa-book text-warning"> </i>
+        <a href="https://www.researchgate.net/publication/330473345_Applying_Deep_Learning_to_Public_Health_Using_Unbalanced_Demographic_Data_to_Predict_Thyroid_Disorder">Applying Deep Learning to Public Health:</a> Using Unbalanced Demographic Data to Predict Thyroid Disorder
+        </button>
+          <div class="panel">
+            <p>Published in 2018 IEEE 9th Annual Information Technology, Electronics and Mobile Communication Conference</p>
+            <img src="img/thyroid.png" alt="results chart">
+          <ul class="fa-ul mb-0">
             <br>
+          </div>
 
-          <li>
-            <i class="fa-li fa fa-project-diagram text-warning"></i>
-            <a href="https://usf-cs360-2017.github.io/project-jalague/">Vizualizing the IMDB</a> Visualization website for data collected from the internet movie database. Used Tableau, HTML/CSS, JavaScript (d3), MS Excel, and MS Access</li>
-            <img src="img/imdb.png" alt="visualization static screenshot">
-          <br>
-          <li>
-            <i class="fa-li fa fa-project-diagram text-warning"></i>
-          University of San Francisco Men’s Basketball Team: Analyzed play by play data to determine the optimal lineup of players at any given time</li>
-          <br>
-          <li>
-            <i class="fa-li fa fa-project-diagram text-warning"></i>
-          <a href="https://github.com/jalague/Projects/tree/master/Personal/Game">Chugg</a>: Java based desktop app drinking game to be played with a large group of people</li>
-          <img src="img/chugged.png" alt="chugg game setup and play">
-          </ul>
+        <button class="accordion"> <i class="fas fa-project-diagram text-warning"> </i>
+        <a href="https://docs.google.com/presentation/d/16RVb31mAPiwDYtUNrYCGhXxWslKI_cLqxbhrrI8S1pM/edit#slide=id.g21c612c314_0_0" >Predicting Room Switches</a> for University of San Francisco’s Housing Department</button>
+            <div class="panel">
+              <p>Used random forests, logistic regression, and SVM in Python/R to predict rommates that would want to switch to new roommates with over 90% accuracy.</p>
+              <img src="img/roommates.PNG" alt="results chart">
+              <br>
+            </div>
+        <button class="accordion"><i class="fas fa-project-diagram text-warning"> </i>
+        <a href="https://usf-cs360-2017.github.io/project-jalague/">Vizualizing the IMDB</a> Visualization website for data collected from the internet movie database.
+        </button>
+        <div class="panel">
+          <p>Used Tableau, HTML/CSS, JavaScript (d3), MS Excel, and MS Access</p>
+          <img src="img/imdb.png" alt="visualization static screenshot">
+        </div>
+
+        <button class="accordion"><i class="fas fa-project-diagram text-warning"> </i>
+          University of San Francisco Men’s Basketball Team:
+        </button>
+          <div class="panel">
+            <p>Analyzed play by play data to determine the optimal lineup of players at any given time using CSV data in R</p>
+
+          </div>
+
+
+        <button class="accordion"><i class="fas fa-project-diagram text-warning"> </i>
+              LA Elections Department: Optimizing ballot collections
+        </button>
+          <div class="panel" >
+            <iframe src="map3496.html" height="700" width="600" name="myFrame">
+            </iframe>
+
+          </div>
+
+        <button class="accordion"><i class="fas fa-gamepad text-warning"></i>
+      <a href="https://github.com/jalague/Projects/tree/master/Personal/Game">Chugg</a>: Java based desktop app drinking game to be played with a large group of people.
+        </button>
+          <div class="panel">
+              <img src="img/chugged.png" alt="chugg game setup and play">
+          </div>
+
+
           </ul>
 
       </div>
@@ -315,6 +386,70 @@
 
   <!-- Custom scripts for this template -->
   <script src="js/resume.min.js"></script>
+
+  <script>
+  var acc = document.getElementsByClassName("accordion");
+  var i;
+
+  for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var panel = this.nextElementSibling;
+      if (panel.style.maxHeight) {
+        panel.style.maxHeight = null;
+      } else {
+        panel.style.maxHeight = panel.scrollHeight + "px";
+      }
+    });
+  }
+  </script>
+  <script>
+  window.onload = function() {
+	var elements = document.getElementsByTagName('*'),
+		i;
+	for (i in elements) {
+		if (elements[i].hasAttribute && elements[i].hasAttribute('data-include')) {
+			fragment(elements[i], elements[i].getAttribute('data-include'));
+		}
+	}
+	function fragment(el, url) {
+		var localTest = /^(?:file):/,
+			xmlhttp = new XMLHttpRequest(),
+			status = 0;
+
+		xmlhttp.onreadystatechange = function() {
+			/* if we are on a local protocol, and we have response text, we'll assume
+ *  				things were sucessful */
+			if (xmlhttp.readyState == 4) {
+				status = xmlhttp.status;
+			}
+			if (localTest.test(location.href) && xmlhttp.responseText) {
+				status = 200;
+			}
+			if (xmlhttp.readyState == 4 && status == 200) {
+				el.outerHTML = xmlhttp.responseText;
+			}
+		}
+
+		try {
+			xmlhttp.open("GET", url, true);
+			xmlhttp.send();
+		} catch(err) {
+			/* todo catch error */
+		}
+	}
+}
+</script>
+
+
+    <script>
+var frame = window.frames["myFrame"].document;
+var data = frame.getElementsByTagName('html')[0].innerHTML;
+    document.getElementById("result").innerHTML = data;
+</script>
+
+  </head>
+
 
 </body>
 
