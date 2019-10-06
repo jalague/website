@@ -111,10 +111,7 @@
           <a class="nav-link js-scroll-trigger" href="#skills">Skills</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#interests">Interests</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#awards">Awards</a>
+          <a class="nav-link js-scroll-trigger" href="#awards">Awards & Press</a>
         </li>
         <li class="nav-item">
           <a class="nav-link js-scroll-trigger" href="#sideprojects">Side Projects</a>
@@ -139,12 +136,19 @@
         </div>
         <p class="lead mb-5"></p>
         <div class="social-icons">
-          <a href="https://www.linkedin.com/in/john-lague-a51447b5/">
+          <a href="https://www.linkedin.com/in/john-lague/">
             <i class="fab fa-linkedin-in"></i>
           </a>
           <a href="https://github.com/jalague/">
             <i class="fab fa-github"></i>
           </a>
+          <div class="w-100">
+            <br>
+            <p> Inquisative founder/data scientist with experience providing business insights and using advanced machine learning
+              algorithms. I'm motivated by challenging projects and work on projects that add value to the
+              world.</p>
+            <p class="mb-0">I also enjoy rock climbing, scuba diving, creating and editing comedic short videos, trying new food, reading, and attempting (I have yet to succeed) to teach myself to play an instrument.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -156,7 +160,8 @@
         <a href="https://www.researchgate.net/publication/330473345_Applying_Deep_Learning_to_Public_Health_Using_Unbalanced_Demographic_Data_to_Predict_Thyroid_Disorder">Applying Deep Learning to Public Health:</a> Using Unbalanced Demographic Data to Predict Thyroid Disorder
         </button>
           <div class="panel">
-            <p>Published in 2018 IEEE 9th Annual Information Technology, Electronics and Mobile Communication Conference</p>
+            <p>Published in 2018 IEEE 9th Annual Information Technology, Electronics and Mobile Communication Conference. Won “Most Impactful Graduate Research” award at University of San Francisco in May, 2017.
+Improved the accuracy of thyroid disease prediction by 35% compared to prior benchmark, a model built by health startup Influence Health. Our model was trained only on imbalanced demographic data.</p>
             <img src="img/thyroid.png" alt="results chart">
           <ul class="fa-ul mb-0">
             <br>
@@ -165,6 +170,7 @@
                 LA Elections Department: Optimizing ballot collections
           </button>
             <div class="panel" >
+              <p>Optimized the assignment of polling centers (places citizens go to vote) to check in centers (intermediary location ballots are collected before going to the main LA elections headquarters). Using Google Maps api we optimized for travel distance and times to reduce the time it took to collect ballots. Decreased ballot collection times by up to 12% using k-means clustering in the 2018 primary elections.</p>
               <iframe src="map3496.html" height="700" width="600" name="myFrame">
               </iframe>
 
@@ -173,7 +179,9 @@
         <button class="accordion"> <i class="fas fa-project-diagram text-warning"> </i>
         <a href="https://docs.google.com/presentation/d/16RVb31mAPiwDYtUNrYCGhXxWslKI_cLqxbhrrI8S1pM/edit#slide=id.g21c612c314_0_0" >Predicting Room Switches</a> for University of San Francisco’s Housing Department</button>
             <div class="panel">
-              <p>Used random forests, logistic regression, and SVM in Python/R to predict rommates that would want to switch to new roommates with over 90% accuracy.</p>
+              <p>Saved the university $100,000 each year on roommate conflict based churn using machine learning algorithms in
+R & Python (Random Forests, SVM, and Logistic Regression) to predict which roommate pairings were likely to
+have conflicts with 90% accuracy.</p>
               <img src="img/roommates.PNG" alt="results chart">
               <br>
             </div>
@@ -181,7 +189,7 @@
         <a href="https://usf-cs360-2017.github.io/project-jalague/">Vizualizing the IMDB</a> Visualization website for data collected from the internet movie database.
         </button>
         <div class="panel">
-          <p>Used Tableau, HTML/CSS, JavaScript (d3), MS Excel, and MS Access</p>
+          <p>Visualized potential factors that increase a movie's gross earnings. Used Tableau, HTML/CSS, JavaScript (d3), MS Excel, and MS Access.</p>
           <img src="img/imdb.png" alt="visualization static screenshot">
         </div>
 
@@ -211,18 +219,31 @@
         <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
           <div class="resume-content">
             <h3 class="mb-0">COO and Co-founder</h3>
-            <div class="subheading mb-3"><a href="https://www.communityphone.org">Community Phone Company</a></div>
+            <div class="subheading mb-3"><a href="https://www.communityphone.org">Community Phone Company</a> (Y Combinator)</div>
             <ul>
             <li>Co-founded one of the first bootstrapped cell phone carriers in the nation, now a multi-million dollar company</li>
-            <li>Web scraping in Python for marketing, SEO, and competition analysis</li>
-            <li>Automated visualization of customer usage data using ggplot</li>
-            <li>Created prediction models to forecast customer cellular usage, used for optimizing our whoelsale purchasing</li>
-            <li>Tested dozens of marketing channels</li>
-            <li>Helped bring the company from $0 ARR to $300k ARR in 1 year</li>
+            <li>Community Phone was funded by Y Combinator (first investors in Airbnb, Reddit, and Dropbox) and raised $650,000+ from investors Justin & Dan Kan (founders of twitch, Atrium, Cruise), Lachy Groom (early stripe engineers), Dylan Field (founder of Figma), and others.</li>
+            <li>As founding member of the data team, built models to predict customers' cellular usage to maximize the
+              efficiency of our wholesale purchasing. This resulted in a profit margin increase of 3-6% for Community Phone on a
+              recurring month-to-month basis.</li>
+            <li>Planned and executed growth hacking strategies involving web scraping, SEO, and competition analysis.</li>
+
           </ul>
           </div>
           <div class="resume-date text-md-right">
             <span class="text-primary">Dec 2017 - July 2019</span>
+          </div>
+        </div>
+
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-content">
+            <h3 class="mb-0">Data Science Team</h3>
+            <div class="subheading mb-3">Los Angeles Elections Dep.</div>
+            <li>Decreased ballot collection times by up to 12% using k-means clustering in the 2018 primary elections.</li>
+            <li>Visualized optimized locations and travel distances in R</li>
+          </div>
+          <div class="resume-date text-md-right">
+            <span class="text-primary">Nov 2017 - May 2018</span>
           </div>
         </div>
 
@@ -242,18 +263,6 @@
           </div>
           <div class="resume-date text-md-right">
             <span class="text-primary">Jan 2015 - Dec 2017</span>
-          </div>
-        </div>
-
-        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-          <div class="resume-content">
-            <h3 class="mb-0">Data Science Team</h3>
-            <div class="subheading mb-3">Los Angeles Elections Dep.</div>
-            <li>Optimized ballot collections using k-means clustering and reduced wait times by 12%.</li>
-            <li>Visualized optimized locations and travel distances in R</li>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">Nov 2017 - May 2018</span>
           </div>
         </div>
 
@@ -347,22 +356,9 @@
 
     <hr class="m-0">
 
-    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="interests">
-      <div class="w-100">
-        <h2 class="mb-5">Interests</h2>
-        <p> Inquisative data scientist with experience analyzing real
-          world data, providing business insights, and using machine learning
-          algorithms. I'm motivated by challenging projects, looking for oppurtunities to grow, and work that adds value to the
-          world.</p>
-        <p class="mb-0">I also enjoy rock climbing, scuba diving, creating and editing comedic short videos, trying new food, reading, and attempting (I have yet to succeed) to teach myself to play an instrument.</p>
-      </div>
-    </section>
-
-    <hr class="m-0">
-
     <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="awards">
       <div class="w-100">
-        <h2 class="mb-5">Awards &amp; Certifications</h2>
+        <h2 class="mb-5">Awards, Certifications, &amp; Press</h2>
         <ul class="fa-ul mb-0">
           <li>
             <i class="fa-li fa fa-trophy text-warning"></i>
@@ -380,6 +376,15 @@
           <li>
             <i class="fa-li fa fa-award text-warning"></i>
             <a href="https://www.divessi.com/en-IC/home/">USPAA</a> - Skydiving AFF graduation (2016)</li>
+          <li>
+          <span class="fa-li"><i class="fas fa-newspaper text-warning"></i></span>
+          <a href="https://www.bostonglobe.com/business/2019/01/04/this-tiny-cambridge-cellphone-carrier-you-can-walk-and-chat-with-ceo/kM4zN2oay5vqveFFAgJVzN/story.html">Boston Globe</a> - Front Page articel about Community Phone (2019)</li>
+        <li>
+          <span class="fa-li"><i class="fas fa-newspaper text-warning"></i></span>
+          <a href="http://www.cambridgeday.com/2019/05/06/pop-ups-such-as-community-phone-fill-a-void-where-view-could-be-long-empty-storefronts/">Cambridge Day</a> - Article about pop up retail stores in Harvard Square (2019)</li>
+          <li>
+          <span class="fa-li"><i class="fas fa-newspaper text-warning"></i></span>
+          <a href="https://www.americaninno.com/boston/boston-startup/this-boston-provider-cuts-phone-bills-on-the-premise-that-1-gigabyte-goes-a-long-way/">Americano</a> - Bostino article about Community Phone(2018)</li>
         </ul>
       </div>
     </section>
