@@ -74,20 +74,55 @@
         <p> Below are dashboards / reports for the deliverables asked for as well as a sample of other directions I exlpored.</p><p>
         You'll find dashboards, some statistical analysis, and custom visualizations that I believe offer some interesting content. I created the dashborads in Tableau (similar to Power BI), I uesd R and R studio for statistical analysis, and finally I created some fun visualizations using JavaScript (d3 api/library) and HTML/CSS. The visualizations are admittedly less practical, but still interesting.
       </p><p>Each dashboard has a brief explaination attached and I have included a summary of my findings at the bottom of the page. </p>
+    <a style="font-size:12px">Assumptions about data:</a>
+        <ul style="font-size:10px">Times worked that are negative have signifigance and should be included in calculations</ul>
+        <ul style="font-size:10px">Foremans "Justin" and "Justin Zimmerman" are two seperate people (they likely are the same person; however I treated them as two sepearte individuals for the purposes of the below)</ul>
+        <ul style="font-size:10px">Total lunch time and Report total time variables are in minutes, total work time is in hours</ul>
+        <ul style="font-size:10px">Finish% means wood finishing and does not mean the % of the total project that is complete</ul>
+        <ul style="font-size:10px">The letters of walls (A,B,C, etc) has signifigance as I group them together several times</ul>
+        <ul style="font-size:10px">Blank Task or Project values in the Labor Report are not purposeful and are treated as Null or "job not listed".</ul>
+
+    <p>Notes: Labor Report has a row that has a sum that is incorrect. There also appears to be a missing employee (Employee #6).</p>
       <hr class="m-6">
         <h3 class="mb-5" id="Dashboards">Dashboards</h3>
         <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
           <div class="resume-content" id="Deliverables">
-<script type='text/javascript' src='https://prod-useast-a.online.tableau.com/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 1000px; height: 827px;'><object class='tableauViz' width='1000' height='827' style='display:none;'><param name='host_url' value='https%3A%2F%2Fprod-useast-a.online.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;lague' /><param name='name' value='InitialInformationplusforemendashboard&#47;ResourceDashboard' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /></object></div>
+          <script type='text/javascript' src='https://prod-useast-a.online.tableau.com/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 1000px; height: 827px;'><object class='tableauViz' width='1000' height='827' style='display:none;'><param name='host_url' value='https%3A%2F%2Fprod-useast-a.online.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;lague' /><param name='name' value='InitialInformationplusforemendashboard&#47;ResourceDashboard' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /></object></div>
+          <p>
+            Above are two charts, both showing the Status of each resource over time. The top chart shows the status (in % completed) of each resource (Pads, Finish, Steel, etc) and the bottom chart shows the status in Sqft remaining.
+You can filter for each project (Woodpine, Cherrtown, etc) over the two month period available. Each resource is a unique color and each project location has it's own row. You can filter the resource statuses
+on the right side by time and Foreman as well. You can group the information my month (May or June), by 1 or multiple weeks, by the exact date, or you can use the Time slider to create a custom date range.
+</p>
+The first observation is the time it takes for each resource to reach 99-100%. It appears that while Pads are always started last they are usually completed the quickest.
+Steel also is always first (which makes sense as it is the structure). I'm assuming Rough% means some sort of rough skeleton that will support the work along with the steel because it always
+comes sequentially by steel and is followed by an increase in Wood. Cherrytown had the least amount of Sqft to complete and only 1 wall, understandabley the sections all completed much quicker. No other porject was marked as fully complete in the timeframe given.
+However, Walls C and E saw an interesting trend in which there is more overlap of tasks/resources worked on at a time. This brings me to the question of does working on tasks sequentially rather than concurrently decrease the time to complete a project or would concurrancy (with obvious limitations) improve the speed of completion?
+</p><p>
+Important: Some days had multiple reports. So, each day is represented by the final report for that day or the "max" status % for that day. Example: if a crew started a day at Finish% = 23% , had Finish% = 50% mid day and ended at Finish% = 75%
+Then you would see 75% as the value represented for that day. With no filtering it will appear as if some Walls were started much earlier than they were in reality. This is an issue I noticed after submitting, but could add filter to remove this issue.
+</p>
 
-
-<script type='text/javascript' src='https://prod-useast-a.online.tableau.com/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 1000px; height: 827px;'><object class='tableauViz' width='1000' height='827' style='display:none;'><param name='host_url' value='https%3A%2F%2Fprod-useast-a.online.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;lague' /><param name='name' value='Initialinformation&#47;TimespentDashboard' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /></object></div>
-          </div>
-</div>
+          <script type='text/javascript' src='https://prod-useast-a.online.tableau.com/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 1000px; height: 827px;'><object class='tableauViz' width='1000' height='827' style='display:none;'><param name='host_url' value='https%3A%2F%2Fprod-useast-a.online.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;lague' /><param name='name' value='Initialinformation&#47;TimespentDashboard' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /></object></div>
+<br>
+          <p>This dashboard looks at the hours worked on each task and filter by Project, Employee, and Time. Use the dropdown menus on the right to filter the data.
+          You can see which employees where spending time on which tasks and on which project. You can also see in the bottom chart how the hours worked on a task change over time.
+          You can group the information my month (May or June), by 1 or multiple weeks, by the exact date, or you can use the Time slider to create a custom date range.
+          Someone more familiar with the build process / what the values mean may be able to quickly spot tasks that are using unnecessary amounts of time.
+          Using the information from the previous dashboard we can also see that there is a general spike in hours worked among most tasks when a project begins the Finish, Steel and Wood stages of building.
+          </p>
+          <p>Important: NULL means the employee did not enter the task name they were working on or it was not recorded</p>
+        </div>
+        </div>
           <div class="resume-content" id="foremen">
             <h4 class="mb-5" id="Dashboards">Other Dashboards</h4>
-<script type='text/javascript' src='https://prod-useast-a.online.tableau.com/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 1000px; height: 827px;'><object class='tableauViz' width='1000' height='827' style='display:none;'><param name='host_url' value='https%3A%2F%2Fprod-useast-a.online.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;lague' /><param name='name' value='InitialInformationplusforemendashboard&#47;Dashboard3&#47;john@johnlague.com&#47;c6ee309b-e052-4838-91e4-c1755c81c96f' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /></object></div>
-
+            <script type='text/javascript' src='https://prod-useast-a.online.tableau.com/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 1000px; height: 827px;'><object class='tableauViz' width='1000' height='827' style='display:none;'><param name='host_url' value='https%3A%2F%2Fprod-useast-a.online.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;lague' /><param name='name' value='InitialInformationplusforemendashboard&#47;Dashboard3&#47;john@johnlague.com&#47;c6ee309b-e052-4838-91e4-c1755c81c96f' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /></object></div>
+            <br>
+            <p>This is an additional dashboard to view the connection between the Foreman. You can see which foremen have the most delays, noteworthy perfomances, client feedback, and the average (median) hours worked. You can also filter by
+            time, so if you would like to see all those values on a specific date or week you can select those days in the filter on the right side.
+            It appears that delays rarely come from the Owner and are instead Other. Based on how there seem to be delays where there are also Equipment requests then I would say the delays that happen tend to come from need equipment.
+            Predicting/foreseeing these incidents could help prevent future delays. Speaking with Jeffery who has experienced these "Other" delays the most and Richard who has had no delays but the most equipment requests per report would be useful.
+            Assuming Noteworthy performances are positive, it would also be useful to speak with Richard because he has the highest number and ratio of Noteworthy Performances and likewise, Jeffery has the highest number of Client Feedback (more feedback is generally good, but feedback can be negative as well).
+            </p>
             </div>
         </div>
 
@@ -106,6 +141,7 @@
               <p>A more in depth look at the relationships between the different tables and their values.</p>
 
 
+              <a href="githu.com/jalague/verticalsolutions">To view R scripts used to clean, organize, and analize the data please click here.</a>
             </div>
           </div>
 
@@ -120,7 +156,7 @@
 
         <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
           <div class="resume-content">
-            <p>Here is a visualization that shows some of the same information as above but in a different manner. This is just a way to explore the data a little bit more and is less practical than a dashboard type solution.</p>
+            <p>Here is a visualization that shows some of the same information as above (Hours worked by employees) but in a different manner. This is just a way to explore the data a little bit more and is less practical than a dashboard type solution.</p>
 
             <h4>To prevent the page from loading slowly I put the visualization on another page <a href="visualization1">HERE</a></h4>
           </div>
@@ -142,7 +178,7 @@
             </li>
           <li>
             <i class="fas fa-hiking text-warning"></i>
-
+            Speak with foremen Jeffery and Richard to understand Delays, Noteworthy Performances, and Equipment Request frequencies.
            </li>
           </ul>
 
@@ -157,11 +193,25 @@
         <ul class="fa-ul mb-0">
           <li>
             <i class="fas fa-search text-warning"></i>
+            Learning the process for wall building to understand what processes are immutable and which are open for optimization. Having a direct understanding of the wall building process would help answer the question of whether tasks should be worked on concurrently or all focused centralized.
             </li>
+            <li>
+              <i class="fas fa-search text-warning"></i>
+              Learning what "Other" stands for Delays. This will help create a model to view where delays can be mitigated or reduced.
+              </li>
           <li>
             <i class="fas fa-search text-warning"></i>
-
+              Getting the remaining pieces to these tables would help in creating a predictive model to improve the prediction of how long it will take to complete a project.
            </li>
+           <li>
+             <i class="fas fa-search text-warning"></i>
+             I'm also quite curious about customer acquisition. Does a majority of revenue come from new gyms? From existing partners/gyms expanding to new locations? Or maybe from existing gyms/partners looking to update walls or expand within an existing location. If most revenue comes from existing customers, it would be interesting to dive a bit deper in the Customer Feedback data and see what correlates with positive experiences to help
+             build a returning customer base.
+            </li>
+            <li>
+              <i class="fas fa-search text-warning"></i>
+              Adding Functionality: Allow user to filter all dashboards at the same time. Update Null handling based on information from VS. Update custom visualization to include sorting by project and seeing project broken down by employee.
+             </li>
           </ul>
 
 
