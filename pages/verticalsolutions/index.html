@@ -89,6 +89,7 @@
           <div class="resume-content" id="Deliverables">
 
 <script type='text/javascript' src='https://prod-useast-a.online.tableau.com/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 1000px; height: 827px;'><object class='tableauViz' width='1000' height='827' style='display:none;'><param name='host_url' value='https%3A%2F%2Fprod-useast-a.online.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;lague' /><param name='name' value='finalpush&#47;ResourceDashboard&#47;john@johnlague.com&#47;2cb5cc66-8538-4cf2-98e3-151376e5c92a' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /></object></div>
+<br>
           <p>
             Above are two charts, both showing the Status of each resource over time. The top chart shows the status (in % completed) of each resource (Pads, Finish, Steel, etc) and the bottom chart shows the status in Sqft remaining.
 You can filter for each project (Woodpine, Cherrtown, etc) over the two month period available. Each resource is a unique color and each project location has it's own row. You can filter the resource statuses
@@ -225,15 +226,15 @@ Then you would see 75% as the value represented for that day. With no filtering 
               <img  src="../../img/vsplotlinearexample.png" alt="Simplified Linear regeression model">
                 <br>
                 <p>Below is a very small sample of some of the predictions along side the real values for the linear models.</p>
-              <img  src="../../img/vslmpredict.png" alt="performance random forest" >
+              <img  src="../../img/vslmpredict.PNG" alt="performance random forest" >
               <br>
                  <p>After getting poor results via linear regression I applied a 'random forest model' to see if there would be an improvement in performance. If you want to learn more about Random Forests please check out this <a href="https://towardsdatascience.com/understanding-random-forest-58381e0602d2">link</a>.</p>
                  <p>Here is a sample of some of the predictions along side the real values for the random forest model.</p>
-                <img  src="../../img/vsrfpredict.png" alt="performance random forest" >
+                <img  src="../../img/vsrfpredict.PNG" alt="performance random forest" >
                  <br>
                 <p>The random forest model did explain more of the variance than the liner regression models; however, the prediction was no better than simply guessing the average number of hours for each task. More information would be required to improve the performance further. Other models could be tested as well such as SVM.</p>
                 <p>Below is a listing of what the model thought were the most important variables (columns) for predicting the hours worked. The most important are at the top. Since the random forest model was no better than guessing the average, the importance ranking should be taken with a large grain of salt.</p>
-                <img  src="../../img/vsrfimportance.png" alt="Importance chart for random forest" >
+                <img  src="../../img/vsrfimportance.PNG" alt="Importance chart for random forest" >
               <h4>Is it possible to predict Noteworthy Performances or Materials requested?</h4>
 
             <p>Similar to the above analysis I began with by exploring general linear models. This time using logistic regression models since this is a classification problem. But I have not included the results here as I ran into similar limitations with logistic regression as I did with linear regression (see R code for more).
