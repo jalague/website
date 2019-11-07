@@ -51,7 +51,7 @@
           <a class="nav-link js-scroll-trigger" style="text-align:left;" href="#analysis">Analysis</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" style="text-align:left;" href="#visualizations">Visualizations</a>
+          <a class="nav-link js-scroll-trigger" style="text-align:left;" href="#visualizations">Visualization</a>
         </li>
         <li class="nav-item">
           <a class="nav-link js-scroll-trigger" style="text-align:left;" href="#findings">Findings</a>
@@ -139,9 +139,119 @@ Then you would see 75% as the value represented for that day. With no filtering 
           <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
             <div class="resume-content">
               <p>A more in depth look at the relationships between the different tables and their values.</p>
+              <p>Before analyzing the data, or even creating the dashboards, I cleaned the data and created several joined tables. Tableau has an easy to use interface for joining tables and in R I used the 'dplyr' library to perform SQL like joins on the data.
+              <h4>The relationship between the Sqft remaining/ Total beginning Sqft and the time to complete a wall</h4>
+              <p>Looking at the dashboards it is not immediately apparent as to whether the total Sqft of resources needed on a project has a very strong effect . Intuitively, one would think that it does, but there may be other - more important- factors. Explporing this will help exlpore possible room for efficiency improvement</p>
+              <p>Below is a table showing the times taken (in days) for each wall to be completed and the total starting Sqft for each resource.</p>
+              <table class="table table-bordered table-hover table-condensed">
+    <thead><tr><th title="Field #1">Wall</th>
+    <th title="Field #2">Wood Sqft</th>
+    <th title="Field #3">Wood Start</th>
+    <th title="Field #4">Wood End</th>
+    <th title="Field #5">Wood Completion</th>
+    <th title="Field #6">Steel sqft</th>
+    <th title="Field #7">Steel Start</th>
+    <th title="Field #8">Steel End</th>
+    <th title="Field #9">Steel Completion</th>
+    </tr></thead>
+    <tbody><tr>
+    <td>Wall A Woodpine </td>
+    <td>1189</td>
+    <td>06/18/19</td>
+    <td>Unknown</td>
+    <td>Unknown</td>
+    <td>1189</td>
+    <td>05/23/19</td>
+    <td>05/30/19</td>
+    <td>7</td>
+    </tr>
+    <tr>
+    <td>Wall B Woodpine</td>
+    <td>NA</td>
+    <td>Unknown</td>
+    <td>Unknown</td>
+    <td>Unknown</td>
+    <td>NA</td>
+    <td>Unknown</td>
+    <td>05/28/19</td>
+    <td>Unknown</td>
+    </tr>
+    <tr>
+    <td>Wall A Azmar </td>
+    <td>1360</td>
+    <td>05/16/19</td>
+    <td>Unknown</td>
+    <td>6</td>
+    <td>292</td>
+    <td>Unknown</td>
+    <td>05/16/19</td>
+    <td>Unknown</td>
+    </tr>
+    <tr>
+    <td>Wall B Azmar</td>
+    <td>Unknown</td>
+    <td>Unknown</td>
+    <td>05/31/19</td>
+    <td>Unknown</td>
+    <td>Unknown</td>
+    <td>Unknown</td>
+    <td>05/28/19</td>
+    <td>Unknown</td>
+    </tr>
+    <tr>
+    <td>Wall P Cherrytown</td>
+    <td>840</td>
+    <td>05/07/19</td>
+    <td>05/12/19</td>
+    <td>7</td>
+    <td>840</td>
+    <td>05/01/19</td>
+    <td>05/14/19</td>
+    <td>13</td>
+    </tr>
+    </tbody></table>
+
+              <p style="font-size:10px; font-align: center"> See full table <a href="table.html"> HERE</a>.
+              <p>I formalize this relationship with a correlation analysis in R to understand the relationship between nubmer of days taken to complete a portion of wall and the starting Sqft.</p>
+              <p>However, the data set is not compelte enough to make a confident conclusion. It appears that that the Sqft remaining do NOT have a large correlation with the time taken to complete a job.
+                However, it does appear that the number of walls on a given project does increase the time taken for completion (intuitively this makes sense).</p>
+
+    <h4>Is it possible to predict Employee Hours on a given task?</h4>
+              <p> Using only the tables provided I generated models to predict the time each employee would spend (in hours) on any given task.</p>
+              <p>I began by exploring the relationship between Task/Job, Division, Department, Project, Foreman, etc and Hours worked by an individual through several linear regression models.</p>
+              <p>However, linear regression models were not explaining much of the variance in the data (thus not predicting well) likely in part because most of the variables are non-numeric (ex: Project name or task name).</p>
+              <p>Here is an example of what the linear model with only one variable (Steel Status) used to predict the number of hours. In actuality I used about a dozen dimensions in the model and it wouldn't be practical to visualize. As you can see though the prediction is not matching the data very well.</p>
+              <img  src="../../img/vsplotlinearexample.png" alt="Simplified Linear regeression model">
+                <br>
+                <p>Below is a very small sample of some of the predictions along side the real values for the linear models.</p>
+              <img  src="../../img/vslmpredict.png" alt="performance random forest" >
+              <br>
+                 <p>After getting poor results via linear regression I applied a 'random forest model' to see if there would be an improvement in performance. If you want to learn more about Random Forests please check out this <a href="https://towardsdatascience.com/understanding-random-forest-58381e0602d2">link</a>.</p>
+                 <p>Here is a sample of some of the predictions along side the real values for the random forest model.</p>
+                <img  src="../../img/vsrfpredict.png" alt="performance random forest" >
+                 <br>
+                <p>The random forest model did explain more of the variance than the liner regression models; however, the prediction was no better than simply guessing the average number of hours for each task. More information would be required to improve the performance further. Other models could be tested as well such as SVM.</p>
+                <p>Below is a listing of what the model thought were the most important variables (columns) for predicting the hours worked. The most important are at the top. Since the random forest model was no better than guessing the average, the importance ranking should be taken with a large grain of salt.</p>
+                <img  src="../../img/vsrfimportance.png" alt="Importance chart for random forest" >
+              <h4>Is it possible to predict Noteworthy Performances or Materials requested?</h4>
+
+            <p>Similar to the above analysis I began with by exploring general linear models. This time using logistic regression models since this is a classification problem. But I have not included the results here as I ran into similar limitations with logistic regression as I did with linear regression (see R code for more).
+
+              <p>After exlporing logistic regeression I moved on again to Random Forsets which performed incredibly well.</p>
+                <p>Using almost all possible factors, the random forest model was able to correctly 'predict' whether there would be Noteworthy Performaces or Materials Requested more than <b>90% of the time</b>!
+                  <p>Below is a screen shot of the important variables of importance for predicting Noteworthy Performances.</p>
+                  <img  src="../../img/vsrfimportanceperf.PNG" alt="Importance chart for random forest noteworthy perfomances" >
+                  <p>And here are the importance variables for predicting .</p>
+                  <img  src="../../img/vsrfimportancemat.PNG" alt="Importance chart for random forest noteworthy perfomances" >
+
+                  <p>You can notice that both models have the other variable listed as very important (the model predicting Materials_requested lists Noteworthy Performances as very important and vis versa for the other model). These tells us there is a strong link between Noteworthy Performances and when Materials are requested.
+                    The other important variables that models share are Steel Status and Employee Count. So the number of employees on a task and the current remaining amount of steel are fairly correlated with material requestes and performances.</p>
 
 
-              <a href="githu.com/jalague/verticalsolutions">To view R scripts used to clean, organize, and analize the data please click here.</a>
+              <br>
+            <i class="fab fa-github "></i>
+            <a href="github.com/jalague/verticalsolutions">To view R scripts used to clean, organize, and analize the data please click here.</a>
+            </i>
             </div>
           </div>
 
@@ -152,13 +262,13 @@ Then you would see 75% as the value represented for that day. With no filtering 
 
     <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="visualizations">
       <div class="w-100">
-        <h2 class="mb-5">Visualizations</h2>
+        <h2 class="mb-5">Visualization</h2>
 
         <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
           <div class="resume-content">
             <p>Here is a visualization that shows some of the same information as above (Hours worked by employees) but in a different manner. This is just a way to explore the data a little bit more and is less practical than a dashboard type solution.</p>
 
-            <h4>To prevent the page from loading slowly I put the visualization on another page <a href="visualization1">HERE</a></h4>
+            <h4>To prevent slow loading I put the visualization on another page, <a href="visualization1">HERE</a></h4>
           </div>
         </div>
       </div>
@@ -174,12 +284,31 @@ Then you would see 75% as the value represented for that day. With no filtering 
         <ul class="fa-ul mb-0">
           <li>
             <i class="fas fa-hiking text-warning"></i>
-
+              I found it was difficult trying to predict how much time a specific employee would work . Further work could be done on predicting how long each project and wall will take if there is more data available.
             </li>
+            <li>
+              <i class="fas fa-hiking text-warning"></i>
+                There is a weak correlation between the total amount of Sqft required for a project and the time it takes to complete that project. However, there appears to be a strong correlation between the number of walls on a given project and the total Sqft. Would need to get the full project data in order to confirm.
+              </li>
+            <li>
+
+              <i class="fas fa-hiking text-warning"></i>
+              However, we did get great results for predicting when materials will be requested and if there are noteworthy performaces. The important variables here being:
+              <ul>
+              <li>Steel Status</li>
+              <li>Employee Count</li>
+              <li>Materials Requested and vis versa for Noteworthy Performances</li>
+            </ul>
+              Looking into exactly how these variables effect the materials requested and noteworthy performaces is necessairy to try to optimize for fewer material requests and more noteworthy performaces.
+              </li>
           <li>
             <i class="fas fa-hiking text-warning"></i>
             Speak with foremen Jeffery and Richard to understand Delays, Noteworthy Performances, and Equipment Request frequencies.
            </li>
+           <li>
+             <i class="fas fa-hiking text-warning"></i>
+             Working on tasks concurrently appears to show a faster overall completion time; however, I would need data from several more projects to confirm that.
+            </li>
           </ul>
 
 
@@ -197,11 +326,11 @@ Then you would see 75% as the value represented for that day. With no filtering 
             </li>
             <li>
               <i class="fas fa-search text-warning"></i>
-              Learning what "Other" stands for Delays. This will help create a model to view where delays can be mitigated or reduced.
+              Learning what "Other" stands for in Delays. This will help create a model to view where delays can be mitigated or reduced.
               </li>
           <li>
             <i class="fas fa-search text-warning"></i>
-              Getting the remaining pieces to these tables would help in creating a predictive model to improve the prediction of how long it will take to complete a project.
+              Getting the remaining pieces (dates before and after) to these tables would help in creating a predictive model to improve the prediction of how long it will take to complete a project.
            </li>
            <li>
              <i class="fas fa-search text-warning"></i>
@@ -210,7 +339,7 @@ Then you would see 75% as the value represented for that day. With no filtering 
             </li>
             <li>
               <i class="fas fa-search text-warning"></i>
-              Adding Functionality: Allow user to filter all dashboards at the same time. Update Null handling based on information from VS. Update custom visualization to include sorting by project and seeing project broken down by employee.
+              Adding Functionality: Allow user to filter all dashboards at the same time. Update Null handling based on information from V.S. Update custom visualization to include sorting by project and seeing project broken down by employee.
              </li>
           </ul>
 
