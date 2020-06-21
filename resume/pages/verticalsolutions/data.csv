@@ -1,0 +1,10 @@
+Wall,Wood Sqft,Wood Start,Wood End,Wood completion time,Steel sqft,Steel Start,Steel End,Steel Compeltion,Rough Sqft,Rough Start,Rough End,Rough Completion time,Pads Sqft,Pads start,Pads end,Pads Completion Time,Finish Sqft,Finish start,Finish end,Finish Completion Time
+Wall A Woodpine ,1189,06/18/19,,,1189,05/23/19,05/30/19,7,1189,06/06/19,06/19/19,26,1189,,,,1189,,,
+Wall B Woodpine,,,,,,,05/28/19,,NA,06/04/19,,,NA,,,,NA,,,
+Wall C Woodpine,,,,,,05/26/19,06/05/19,9,NA,05/31/19,,,NA,,,,NA,,,
+Wall D Woodpine,,06/04/19,06/15/19,11,,,,,NA,06/01/19,06/01/19,1,NA,,,,NA,,,
+Wall E Woodpine,,06/06/19,,,,,05/27/19,,NA,05/30/19,06/15/19,16,NA,,,,NA,,,
+Wall F Woodpine,,,,,,06/07/19,06/12/19,5,NA,06/12/19,06/15/19,3,NA,,,,NA,,,
+Wall A Azmar ,1360,05/16/19,,6,292,,05/16/19,,0,,,,1462,,,,1462,05/27/19,06/04/19,9
+Wall B Azmar,,,05/31/19,,,,05/28/19,,,,,,1462,,,,1462,05/31/19,06/07/19,8
+Wall P Cherrytown,840,05/07/19,05/12/19,7,840,05/01/19,05/14/19,13,840,05/02/19,05/08/19,6,840,05/15/19,05/16/19,2,840,05/08/19,05/16/19,9
