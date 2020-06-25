@@ -75,21 +75,16 @@
   overflow: hidden;
   transition: max-height 0.2s ease-out;
 }
-.iframe-container {
-  overflow: hidden;
-  // Calculated from the aspect ration of the content (in case of 16:9 it is 9/16= 0.5625)
-  padding-top: 56.25%;
-  position: relative;
-}
-
-.iframe-container iframe {
-   border: 0;
-   height: 100%;
-   left: 0;
-   position: absolute;
-   top: 0;
-   width: 100%;
-}
+.frame-area {
+  display: block;
+  width: 100%;  /* RESPONSIVE WIDTH */
+  max-width: 400px;
+  height: 300px;
+  overflow: auto;  /* EDIT TO hidden FOR NO SCROLLBAR */
+  border: #999999 1px solid;
+  margin: 0px;
+  padding: 0px;
+  }
   </style>
 
 
@@ -126,10 +121,9 @@
 <br>
 <p style="text-align:center">This is all the places I've gone climbing. Come climb with me!</p>
 <br>
-<div class="iframe-container">
-    <iframe name="Climbing locations" src="https://www.johnlague.com/pages/verticalsolutions/visualization2/" scrolling="auto">
-    </iframe>
-</div>
+<iframe name="Framename" src="https://johnlague.com/pages/verticalsolutions/" width="400" height="200" frameborder="0" scrolling="auto" class="frame-area">
+</iframe>
+
 
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
