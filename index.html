@@ -86,9 +86,17 @@
   padding: 8px;
   }
 
-  .iframe {
-    display:block;
-    margin: auto;
+  #monkey{
+      width:100%;
+      float:left;
+      text-align:center;
+  }
+  div.sub, iframe {
+      width: 100px;
+      height: 50px;
+      margin: 0 auto;
+      background-color: #777;
+
   }
   </style>
 
@@ -124,7 +132,10 @@
 <br>
 <br>
 <p style="text-align:center">This is my first Youtube promotion video. It's pretty fun!</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/2IiO1bNHazk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen "padding:1px;border:10px solid black;"></iframe>
+<div id="monkey">
+    <div class="sub">div</div>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/2IiO1bNHazk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen "padding:1px;border:10px solid black;"></iframe>
+</div>
 <br>
 <br>
 <p style="text-align:center">This is a map of all the places I've gone climbing. Come climb with me!</p>
